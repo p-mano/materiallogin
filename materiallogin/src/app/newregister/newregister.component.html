@@ -1,0 +1,86 @@
+
+<form class="form-horizontal" action='' method="POST">
+    <fieldset>
+      <div id="legend">
+        <legend class="">Register</legend>
+      </div>
+      <div class="control-group">
+        <!-- Username -->
+        <label class="control-label"  for="username">Username</label>
+        <div class="controls">
+          <mat-form-field>
+            <input matInput placeholder="Enter your email" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+          <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+        </div>
+      </div>
+   
+      <div class="control-group">
+        <!-- E-mail -->
+        <label class="control-label" for="email">E-mail</label>
+        <div class="controls">
+          <mat-form-field>
+            <input matInput placeholder="Enter your email" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+          <p class="help-block">Please provide your E-mail</p>
+        </div>
+      </div>
+   
+      <div class="control-group">
+        <!-- Password-->
+        <label class="control-label" for="password">Password</label>
+        <div class="controls">
+          <mat-form-field>
+            <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </mat-form-field>
+        
+          <p class="help-block">Password should be at least 4 characters</p>
+        </div>
+      </div>
+   
+      <div class="control-group">
+        <!-- Password -->
+        <label class="control-label"  for="password_confirm">Password (Confirm)</label>
+        <div class="controls">
+          <mat-form-field>
+            <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </mat-form-field>
+        
+          <p class="help-block">Please confirm password</p>
+        </div>
+      </div>
+      <div class="control-group">
+        <!-- Password -->
+        <label class="control-label"  >Password (Confirm)</label>
+        <div class="controls">
+          <mat-form-field>
+            <example-tel-input placeholder="Phone number" required></example-tel-input>
+            <mat-icon matSuffix>phone</mat-icon>
+            <mat-hint>Include area code</mat-hint>
+          </mat-form-field>
+        
+          <p class="help-block">Please Enter your Number</p>
+        </div>
+      </div>
+      <div class="controls">
+        <mat-form-field>
+          <textarea matInput placeholder="Textarea"></textarea>
+        </mat-form-field>
+      
+      
+        <p class="help-block">Please Enter your </p>
+      </div>
+    </div>
+   
+      <div class="control-group">
+        <!-- Button -->
+        <div class="controls">
+          <button class="btn btn-success">Register</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
